@@ -2,7 +2,7 @@ ARG nginx_version=1.16.1
 FROM nginx:${nginx_version} AS build
 
 SHELL ["/bin/bash", "-c"]
-
+COPY sources.list /etc/apt/
 RUN set -x \
     && apt-get update \
     && apt-get install -y --no-install-suggests \
